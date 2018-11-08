@@ -68,6 +68,6 @@ that:
 ================================
 
 * [Approaches To Trading](./1_approaches)
-* [Backing the Market](./2_backing the_market)
+* [Backing the Market](./2_backing_the_market)
 * [Picking a Coin](./3_picking_a_coin)
 * [Market Observations](./4_market_observations)
