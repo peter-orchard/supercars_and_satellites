@@ -20,6 +20,7 @@ groups, thus making systems more efficient and reducing costs. For example:
 * No need to have a bank store your money: keep it in Bitcoin;
 * No need for bookies: make bets directly with other bettors via a blockchain;
 * No need for lawyers: enforce contracts directly in computer code.
+
 (This is simplified - none of those professions will go away, but some of their
 functions will, and they will be forced to become more efficient.)
 
