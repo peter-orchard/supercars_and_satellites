@@ -8,7 +8,6 @@ description:   Part intro, part brain dump, on all things crypto and blockchain.
 url:           https://peter-orchard.github.io/supercars_and_satellites/
 paginate:      1
 paginate_path: "/blog/page:num"
-baseurl:       ""
 
 sass:
   sass_dir: _sass
