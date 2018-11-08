@@ -53,7 +53,9 @@
               {% endfor %}
             {% endif %}
 
-            <a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{ node.url }}">{{ nodeTitle }}</a>
+            <a class="sidebar-nav-item{% if page.url == node.url %}
+                      active{% endif %}"
+               href="{{ site.baseurl }}{{ node.url }}">{{ nodeTitle }}</a>
 
           {% endif %}
         {% endif %}
