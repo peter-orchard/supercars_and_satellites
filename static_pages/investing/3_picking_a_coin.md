@@ -4,8 +4,8 @@ title: Picking A Coin
 ---
 
 Assuming blockchain delivers on its potential, where will all the newly created
-value be held? This is the million-bitcoin question. What should look for in a
-potential investment? Many of the guidelines for traditional fundamentals
+value be held? This is the million-bitcoin question. What should we look for in
+a potential investment? Many of the guidelines for traditional fundamentals
 investing are still applicable. For example, you need to analyse the product,
 the market for the product, the company behind the project, its funding, the
 team and their relevant experience, and so on. There are many books written on
