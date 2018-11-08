@@ -1,1 +1,22 @@
-theme: jekyll-theme-minimal
+repository: peter-orchard.github.io/supercars_and_satellites
+
+permalink: pretty
+
+title:         Supercars and Satellites
+tagline:       Musings on Cryptocurrency
+description:   Part intro, part brain dump, on all things crypto and blockchain.
+url:           https://peter-orchard.github.io/supercars_and_satellites/
+paginate:      1
+paginate_path: "/blog/page:num"
+baseurl:       ""
+
+sass:
+  sass_dir: _sass
+  style:    :compressed
+
+author:
+  name: Peter Orchard
+
+plugins:
+  - jekyll-gist
+  - jekyll-paginate

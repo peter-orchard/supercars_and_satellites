@@ -1,0 +1,72 @@
+<!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox" checked>
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p>{{ site.description }}</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <!-- Home menu entry. -->
+    {% assign base = site.baseurl | append: '/' %}
+    <a class="sidebar-nav-item{% if page.url == base %} active{% endif %}" href="{{ base }}">Home</a>
+
+    {% assign pages_list = site.pages | sort:"url" %}
+    {% for node in pages_list %}
+      {% if node.title != null %}
+        {% if node.layout == "page" %}
+
+          <!-- Remove "/static_pages" prefix and
+               final slash from node and page urls. -->
+          {% capture urlNode %}
+            {% include preprocess_url.html url=node.url
+                                           prefix="/static_pages" %}
+          {% endcapture %}
+          {% capture urlPage %}
+            {% include preprocess_url.html url=page.url
+                                           prefix="/static_pages" %}
+          {% endcapture %}
+
+          <!-- Is node a child of the current page or its ancestors?
+               Put another way: is the url of node's parent
+               a substring of the current page's url? -->
+          {% assign urlParent = urlNode | split: '/'
+                                        | reverse
+                                        | shift
+                                        | reverse
+                                        | join: '/' %}
+          {% capture displayNode %}
+            {% include begins_with.html s=urlPage prefix=urlParent %}
+          {% endcapture %}
+          {% assign displayNode = displayNode | strip %}
+          {% if displayNode == "true" %}
+
+            <!-- Indent submenus. -->
+            {% assign nodeTitle = node.title %}
+            {% assign nIndent = urlNode | split: '/' | size | minus: 2 %}
+            {% if nIndent > 0 %}
+              {% assign nodeTitle = nodeTitle | prepend: ' ' %}
+              {% for i in (1..nIndent) %}
+                {% assign nodeTitle = nodeTitle | prepend: '--' %}
+              {% endfor %}
+            {% endif %}
+
+            <a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{ node.url }}">{{ nodeTitle }}</a>
+
+          {% endif %}
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+
+    <!-- Blog menu entry. -->
+    <a class="sidebar-nav-item" href="{{ site.baseurl }}/blog/">Blog</a>
+  </nav>
+
+  <div class="sidebar-item">
+    <p>
+      Last Built: {{ site.time | date: '%Y/%m/%d %H:%M:%S' }}
+    </p>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+<!-- Remove final slash if there is one. -->
+{% assign url = include.url %}
+{% assign lastchar = url | split: "" | last %}
+{% if lastchar == '/' %}
+  {% assign nChar = url | size | minus: 1 %}
+  {% assign url = url | truncate: nChar, "" %}
+{% endif %}
+
+<!-- Remove prefix. -->
+{% capture doRemove %}
+  {% include begins_with.html s=url prefix=include.prefix %}
+{% endcapture %}
+{% assign doRemove = doRemove | strip %}
+{% if doRemove == "true" %}
+  {% assign start = include.prefix | size %}
+  {% assign nChar = url | size | minus: start %}
+  {% assign url   = url | slice: start, nChar %}
+{% endif %}
+
+{{ url }}

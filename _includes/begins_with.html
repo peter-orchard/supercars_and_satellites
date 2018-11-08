@@ -1,0 +1,7 @@
+{% assign len  = include.prefix | size %}
+{% assign trun = include.s | slice: 0, len %}
+{% if include.prefix == trun %}
+  true
+{% else %}
+  false
+{% endif %}
